@@ -255,14 +255,14 @@ export class AutoCompleteComponent implements ControlValueAccessor {
         this.keyword = this.getLabel(selection);
         this.formValue = this.getFormValue(selection);
         let that = this;
-        setTimeout(function(){
-          that.hideItemList();
-        }, 300);
+
         // emit selection event
         this.updateModel();
 
         if (this.hideListOnSelection) {
-            this.hideItemList();
+            setTimeout(function(){
+              that.hideItemList();
+            }, 300);
         }
 
         // emit selection event
