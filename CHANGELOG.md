@@ -20,3 +20,6 @@
 ## [1.6.2] - alpha 2017-12-16
 * bug fixes
 * support for Angular 5.0
+
+## [1.6.3] - alpha 2018-03-14
+* prevent touch event occurs for elements under item list when selecting an item

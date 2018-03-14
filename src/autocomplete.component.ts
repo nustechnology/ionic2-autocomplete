@@ -67,12 +67,12 @@ const defaultOpts = {
                 <ng-template
                         [ngTemplateOutlet]="template || defaultTemplate"
                         [ngTemplateOutletContext]="
-                        {attrs:{ 
-                          data: suggestion, 
+                        {attrs:{
+                          data: suggestion,
                           label: getLabel(suggestion),
                           keyword: keyword,
-                          formValue: getFormValue(suggestion), 
-                          labelAttribute: dataProvider.labelAttribute, 
+                          formValue: getFormValue(suggestion),
+                          labelAttribute: dataProvider.labelAttribute,
                           formValueAttribute: dataProvider.formValueAttribute }}"></ng-template>
             </li>
         </ul>
@@ -254,8 +254,10 @@ export class AutoCompleteComponent implements ControlValueAccessor {
     public select(selection: any): void {
         this.keyword = this.getLabel(selection);
         this.formValue = this.getFormValue(selection);
-        this.hideItemList();
-
+        let that = this;
+        setTimeout(function(){
+          that.hideItemList();
+        }, 300);
         // emit selection event
         this.updateModel();
 
