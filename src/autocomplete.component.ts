@@ -172,6 +172,7 @@ export class AutoCompleteComponent implements ControlValueAccessor {
     }
 
     public updateModel() {
+        this.formValue = this.keyword;
         this.onChangeCallback(this.formValue);
     }
 
@@ -229,7 +230,6 @@ export class AutoCompleteComponent implements ControlValueAccessor {
 
         // emit event
         this.ionAutoInput.emit(this.keyword);
-        this.formValue = this.keyword;
     }
 
     /**
