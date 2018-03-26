@@ -229,6 +229,7 @@ export class AutoCompleteComponent implements ControlValueAccessor {
 
         // emit event
         this.ionAutoInput.emit(this.keyword);
+        this.formValue = this.keyword;
     }
 
     /**
